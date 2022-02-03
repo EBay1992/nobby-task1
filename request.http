@@ -1,0 +1,39 @@
+GeT http://localhost:3000/todos HTTP/1.
+Content-Type: application/json
+
+
+### post a todo
+POST http://localhost:3000/todos HTTP/1.
+Content-Type: application/json
+
+{
+    "title":"finish the course",
+    "description":"dont forget to finish the course"
+}
+
+
+### update a todo
+PUT  http://localhost:3000/todos/3423cf6a-f383-40b5-b669-b5d4936d9e88 HTTP/1.
+Content-Type: application/json
+
+{
+    "description":"dont forget to start the course"
+}
+
+### update a todo with wrong id
+PUT  http://localhost:3000/todos/3423cf6a-f383-40b5-b669-b5936d9e88 HTTP/1.
+Content-Type: application/json
+
+{
+    "description":"dont forget to start the course"
+}
+
+### delete a todo with id
+DELETE   http://localhost:3000/todos/034da87d-6d47-4eba-b9ce-90f386f5c26f HTTP/1.
+Content-Type: application/json
+
+
+### try to delete a todo with wrong id
+DELETE   http://localhost:3000/todos/3423cf6a-f383-40b5-b669-b5936d9e88 HTTP/1.
+Content-Type: application/json
+

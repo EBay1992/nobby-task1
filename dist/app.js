@@ -9,6 +9,9 @@ const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use("/todos", todos_1.default);
+app.get("/", (req, res, next) => {
+    res.status(200).json({ message: "Hello world, from aws" });
+});
 app.use((err, req, res, next) => {
     res.status(500).json({ message: "Internal Service Error" });
 });

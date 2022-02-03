@@ -12,7 +12,6 @@ const createTodo = (req, res, next) => {
     const { title, description } = req.body;
     if (title && description) {
         const newTodo = new TodoModel_1.default(id, title, description);
-        console.log(newTodo);
         todos.push(newTodo);
         return res.status(201).json({
             message: "The todo is created successfully",
@@ -30,10 +29,8 @@ const getTodos = (req, res, next) => {
 exports.getTodos = getTodos;
 const updateTodo = (req, res, next) => {
     const { id } = req.params;
-    console.log(id);
     const { title, description } = req.body;
     const foundTodoIndex = todos.findIndex((todo) => todo.id === id);
-    console.log(foundTodoIndex);
     if (foundTodoIndex !== -1) {
         const foundTodo = todos[foundTodoIndex];
         if (title) {

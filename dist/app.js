@@ -12,5 +12,5 @@ app.use("/todos", todos_1.default);
 app.use((err, req, res, next) => {
     res.status(500).json({ message: "Internal Service Error" });
 });
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 app.listen(port, () => console.log("server is running on port:" + port));
